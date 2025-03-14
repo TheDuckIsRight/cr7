@@ -1,0 +1,280 @@
+.timeline {
+    padding: 4rem 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: white;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2px;
+    height: 90%;
+    margin-top: 100px;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.5s;
+    /* overflow: hidden; */
+}
+
+/* .timeline-item::before {
+    opacity: 0;
+    content: " ";
+    position: absolute;
+    display: block;
+    width: 95%;
+    height: 95%;
+    right: 2%;
+    overflow: hidden;
+
+    background: linear-gradient(#ff2288, #387ef0);
+    transition: opacity 300ms;
+    animation: rotation_9018 8s infinite linear;
+    animation-play-state: paused;
+}
+
+.timeline-item:hover::before {
+    opacity: 1;
+    animation-play-state: running;
+    overflow: hidden;
+} */
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 25px;
+    height: 25px;
+    right: -17px;
+    background-color: white;
+    border: 4px solid #FF9F55;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+    backdrop-filter: blur(10px);
+}
+
+.timeline-item.left {
+    left: -80px;
+}
+
+.timeline-item.right {
+    left: 49%;
+}
+
+.timeline-item.right::after {
+    left: -8px;
+}
+
+.timeline-item.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.timeline-content {
+    padding: 20px 30px;
+    background: rgba(255, 255, 255, 0.1);
+    position: relative;
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+
+.timeline-content:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.03);
+}
+
+.year {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #FF9F55;
+    margin-bottom: 0.5rem;
+    transition: all 0.3s;
+}
+
+.timeline-content:hover .year {
+    transform: scale(1.1);
+    color: #FFB366;
+}
+
+.timeline-content p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+/* @keyframes rotation_9018 {
+    0% {
+      transform: rotate(0deg);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+} */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.popup-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup-container {
+    position: absolute;
+    width: 90%;
+    max-width: 700px;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transform: scale(0.9);
+    transition: transform 0.3s;
+    overflow: auto; /* https://stackoverflow.com/questions/22635362/popup-use-scrollbar-of-window */
+    overflow-x: hidden; 
+}
+
+.popup-overlay.active .popup-container {
+    transform: scale(1);
+}
+
+.popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+}
+
+.popup-year {
+    font-size: 2rem;
+    margin: 0;
+    color: #FF9F55;
+    position: relative;
+    top: 1%;
+    left: 2%;
+}
+
+.popup-scroll-container {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0 5px;
+    
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.3) rgba(255, 255, 255, 0.1);
+}
+
+.popup-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    padding: 25px;
+}
+
+.popup-media {
+    margin-bottom: 20px;
+}
+
+.popup-image {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.popup-details p {
+    margin-bottom: 15px;
+}
+
+.close-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    top: 3%;
+    right: 3%;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    position: absolute;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.3s;
+    z-index: 2;
+}
+
+.close-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* .circle {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: #ffbb66;
+    position: relative;
+    filter: blur(15px);
+    animation: floating 2600ms infinite linear;
+    z-index: -1;
+}
+
+#bottom {
+    background-color: #ff8866;
+    left: 50px;
+    bottom: 0px;
+    width: 150px;
+    height: 150px;
+    animation-delay: -800ms;
+}
+  
+#right {
+    background-color: #ff2233;
+    left: 160px;
+    top: -80px;
+    width: 30px;
+    height: 30px;
+    animation-delay: -1800ms;
+}
+
+@keyframes floating {
+    0% {
+      transform: translateY(0px);
+    }
+  
+    50% {
+      transform: translateY(10px);
+    }
+  
+    100% {
+      transform: translateY(0px);
+    }
+} */

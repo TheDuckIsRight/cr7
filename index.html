@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <!--  Metadata  -->
+    <base href="./">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
+    <meta name="author" content="Thuận, Hưng">
+
+    <!--  CSS Styling  -->
+    <style>
+        .smooth {
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        @font-face { font-family: Stangith; src: url('./Components/Fonts/Stangith/stangith.otf'); }
+        @font-face { font-family: Branch; src: url('./Components/Fonts/Branch/Branch.otf'); }
+        @font-face { font-family: Ficoria; src: url('./Components/Fonts/Ficoria/Ficoria.otf'); }
+
+        ::webkit-scrollbar-button {
+            display: none;
+        }
+
+        ::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(83, 83, 83, 0.07);
+            background-color: #f1f1f1;
+        }
+        ::-webkit-scrollbar {
+            width: 7px;
+            background-color: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: #FBAB7E;
+
+            /* Lựa màu trên https://www.grabient.com/ */
+            border-radius: 5px;
+            border: 2px solid #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+        }
+        :root {
+            --bg-primary: rgb(25, 0, 0);
+            --text-primary: rgb(255, 255, 255);
+            --font-color: rgb(242, 217, 217);
+            --font-color-2: #f5a3a5;
+            --illust-color: #a3a3f5;
+            --tertiary-color: rgb(92, 10, 12);
+            --shadow: rgb(40, 21, 21);
+            background: linear-gradient(var(--bg-primary),var(--shadow),rgb(31, 27, 27), var(--bg-primary));
+            background-size: cover;
+            background-repeat: no-repeat;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-primary);
+            margin: 0;
+            padding: 0;
+            /* overflow-x: hidden; */
+        }
+    </style>
+    <link rel="stylesheet" href="./Code/header.css" type="text/CSS">
+    <link rel="stylesheet" href="./Code/stats.css" type="text/CSS">
+    <link rel="stylesheet" href="./Code/timeline.css" type="text/CSS">
+    <link rel="stylesheet" href="./Code/slider.css" type="text/CSS">
+    <link rel="stylesheet" href="./Code/footer.css" type="text/CSS">
+    <link rel="stylesheet" href="./Code/clock.css" type="text/CSS">
+
+    <!--  Javascript -->    
+
+    <!--  Title decoration  -->
+    <title>CR7 HALL OF FAME</title>
+    <link rel="icon" href="./Components/UR Cristiano Ronaldo.svg" type="images/x-icon">
+</head>
+<body>
+    <audio id="background-music" src="./Components/Home - We're Finally Landing - Doomed.mp3" autoplay="true" loop></audio>
+    <header class="header">
+        <img class="background_header" src="./Components/cristiano-ronaldo-portugal-france-euro-2016-final_3741701.jpg" alt="" width="" height="850px">
+        <div class="shiny_text smooth" style="font-family: Stangith;">CRISTIANO RONALDO</div>
+        <h3 class="description_header smooth">Anh đến từ hành tinh nào vậy?</h3>
+        <!-- bỏ vì xấu -->
+        <!-- <img class="ronaldo_header_1" src="/Components/ronaldo_realmadrid_nobackground.png" alt="">
+        <img class="ronaldo_header_2" src="/Components/ronaldo_juventus_toppage_nobackground.png" alt="">
+        <img class="ronaldo_header_3" src="/Components/ronaldo-manu-halfbody.png" alt="" height="650px" width=""> -->
+    </header>
+    <main>
+        <section class="stats-container">
+            <h2 style="text-align: center; color: #ff671f; font-size: 50px;">TIỂU SỬ SỰ NGHIỆP</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                <div class="stat-card-inner">
+                    <div class="stat-card-front">
+                        <h2 class="stat-description">Số bàn thắng</h2>
+                        <div class="stat-number" data-target="924">0</div>
+                    </div>
+                    <div class="stat-card-back">
+                        <h2 class="stat-description">Số kiến tạo</h2>
+                        <div class="stat-number" data-target="257">0</div>
+                    </div>
+                </div></div>
+                <div class="stat-card">
+                <div class="stat-card-inner">
+                    <div class="stat-card-front">
+                        <h2 class="stat-description">Champions League</h2>
+                        <div class="stat-number" data-target="5">0</div>
+                    </div>
+                    <div class="stat-card-back">
+                        <h2 class="stat-description">Số Hattrick</h2>
+                        <div class="stat-number" data-target="66">0</div>
+                    </div>
+                </div></div>
+                <div class="stat-card">
+                <div class="stat-card-inner">
+                    <div class="stat-card-front">
+                        <h2 class="stat-description">Ballon d'Or</h2>
+                        <div class="stat-number" data-target="5">0</div>
+                    </div>
+                    <div class="stat-card-back">
+                        <h2 class="stat-description">Free Kicks</h2>
+                        <div class="stat-number" data-target="64">0</div>
+                    </div>
+                </div></div>
+                <div class="stat-card">
+                <div class="stat-card-inner">
+                    <div class="stat-card-front">
+                        <h2 class="stat-description">Bàn thắng quốc tế</h2>
+                        <div class="stat-number" data-target="135">0</div>
+                    </div>
+                    <div class="stat-card-back">
+                        <h2 class="stat-description">Đánh đầu</h2>
+                        <div class="stat-number" data-target="154">0</div>
+                    </div>
+                </div></div>
+            </div>
+        </section>
+    
+        <section class="timeline">
+            <div class="timeline-item left">
+                <div class="timeline-content" data-year="2002-2003" data-expanded-info='
+                    <div class="popup-media">
+                        <img src="./Components/ronaldo_sportingcp.jpg" class="popup-image">
+                    </div>
+                    <div class="popup-details">
+                        <p>Ra mắt đội một Sporting CP vào năm 2002 khi mới 17 tuổi.</p>
+                        <p>Trở thành cầu thủ duy nhất chơi cho đội U16, U17, U18, đội dự bị và đội một của Sporting trong cùng một mùa giải.</p>
+                        <p>Gây ấn tượng mạnh trong trận giao hữu với MU năm 2003, khiến Sir Alex Ferguson quyết định chiêu mộ.</p>
+                        <p>Chuyển đến MU với giá <strong>12 triệu bảng</strong>, trở thành cầu thủ trẻ đắt giá nhất bóng đá Anh lúc bấy giờ</p>
+                        <p><strong>16/8/2003:</strong> Ra mắt MU trong trận thắng <strong>4-0</strong> trước Bolton, được Sir Alex đánh giá là một trong những màn ra mắt ấn tượng nhất.</p>
+                    </div>
+                '>
+                    <div class="year">2003</div>
+                    <p>Kí hợp đồng với Manchester United, bắt đầu hành trình của mình tại Premier League</p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-content" data-year="2003-2008" data-expanded-info='
+                    <div class="popup-media">
+                        <img src="./Components/ronaldo_manunited_toppage.png" class="popup-image">
+                    </div>
+                    <div class="popup-details">
+                        <ul>
+                            <li>2006/2007: Vô địch Premier League lần đầu tiên.</li>
+                            <li>2007/2008: Vua phá lưới Premier League với 31 bàn, giành Chiếc giày vàng châu Âu. Đồng thời giành Quả bóng Vàng 2008, lần đầu tiên trong sự nghiệp.</li>
+                            <li>2008: Giành chức vô địch Premier League lần thứ Ba liên tiếp</li>
+                        </ul>
+                    </div>                
+                '>
+                    <div class="year">2008</div>
+                    <p>Quả bóng vàng đầu tiên cùng Quỷ Đỏ, khẳng định đẳng cấp vươn tầm thế giới của anh</p>
+                </div>
+            </div>
+            <div class="timeline-item left">
+                <div class="timeline-content" data-year="2009-2018" data-expanded-info='
+                    <div class="popup-media">
+                        <img src="./Components/ronaldo_realmadrid_toppage.png" class="popup-image">
+                    </div>
+                    <div class="popup-details">
+                        <ul>
+                            <li>2010/2011: Giành Copa del Rey, danh hiệu đầu tiên với Real Madrid. Ghi 53 bàn, lần đầu tiên chạm mốc 50 bàn/mùa.</li>
+                            <li>2011/2012: Giúp Real Madrid vô địch La Liga với kỷ lục 100 điểm. Ghi 60 bàn, lập nhiều kỷ lục ghi bàn tại La Liga.</li>
+                            <li>2013: Giành Quả bóng Vàng lần thứ hai.</li>
+                            <li>2013/2014: Giúp Real Madrid vô địch Champions League lần thứ 10 (La Décima). Lập kỷ lục ghi 17 bàn trong một mùa giải Champions League. Giành Quả bóng Vàng lần thứ ba.</li>
+                            <li>2015/2016: Vô địch Champions League, ghi bàn quyết định ở loạt sút luân lưu chung kết. Giành Quả bóng Vàng lần thứ tư.</li>
+                            <li>2016/2017: Vô địch Champions League lần thứ tư, ghi 2 bàn trong trận chung kết. Giành Quả bóng Vàng lần thứ năm.</li>
+                            <li>2017/2018: Giúp Real vô địch Champions League lần thứ ba liên tiếp, ghi bàn thắng xe đạp chổng ngược vào lưới Juventus. Trở thành cầu thủ ghi nhiều bàn nhất lịch sử Champions League.</li>
+                        </ul>
+                        <p><strong>Rời Real Madrid sau 9 năm, trở thành huyền thoại của CLB.</strong></p>
+                    </div>                 
+                '>
+                    <div class="year">2009</div>
+                    <p>Kì chuyển nhượng bạc tỷ đến Real Madrid (£80 million), những điều sau đó là <span style="color: var(--font-color-2);">lịch sử</span></p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-content" data-year="2018-2020" data-expanded-info='
+                    <div class="popup-media">
+                        <img src="./Components/ronaldo_juventus_toppage.png" class="popup-image">
+                    </div>
+                    <div class="popup-details">
+                        <p>Gia nhập Juventus với giá 100 triệu euro, giúp đội vô địch Serie A 2019, 2020.</p>
+                        <p><strong>2018-2019:</strong> Giành Serie A ngay trong mùa giải đầu tiên. Được bầu chọn là Cầu thủ xuất sắc nhất Serie A.</p>
+                        <p><strong>2019-2020:</strong> Trở thành Vua phá lưới Serie A với 29 bàn. Tuy nhiên Juventus thất bại ở Champions League, Ronaldo bắt đầu cân nhắc rời đi.</p>
+                    </div>                  
+                '>
+                    <div class="year">2018</div>
+                    <p>Chuyển nhượng đến Juventus và hành trình thống trị Serie A của anh Bảy</p>
+                </div>
+            </div>
+            <div class="timeline-item left">
+                <div class="timeline-content" data-year="2021-2022" data-expanded-info='
+                    <div class="popup-media">
+                        <img src="./Components/ronaldo_mu.jpg" class="popup-image">
+                    </div>
+                    <div class="popup-details">
+                        <p><strong>2021-2022:</strong></p>
+                        <ol>
+                            <li>Ghi 24 bàn trên mọi đấu trường, là cầu thủ ghi bàn nhiều nhất của MU mùa giải đó.</li>
+                            <li>Lập hat-trick vào lưới Tottenham và Norwich.</li>
+                            <li>Trở thành cầu thủ ghi bàn nhiều nhất trong lịch sử bóng đá cấp ĐTQG, vượt Ali Daei (111 bàn).</li>
+                        </ol>
+                        <p><strong>2022:</strong> Mâu thuẫn với HLV Erik ten Hag, anh bị loại khỏi đội hình chính. Anh rời MU vào tháng 11/2022 sau buổi phỏng vấn gây tranh cãi với Piers Morgan.</p>
+                    </div>
+                    <div class="popup-media">
+                        <img src="./Components/ronaldo_meme.jpg" class="popup-image">
+                    </div>                   
+                '>
+                    <div class="year">2021</div>
+                    <p>Cuộc tái ngộ cảm động ở mái nhà xưa Manchester United (quá xui cho anh vì gặp ngay thằng 10 hói)</p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-content" data-year="2023-Nay" data-expanded-info='
+                    <div class="popup-media">
+                        <img src="./Components/ronaldo-alnassr.jpeg" class="popup-image">
+                    </div>
+                    <div class="popup-details">
+                        <p><strong>2023:</strong> Gia nhập Al Nassr với mức lương 200 triệu euro/năm, cao nhất thế giới. Ghi hat-trick đầu tiên tại Saudi Pro League.</p>
+                        <p><strong>2024:</strong> Giữ vững vị thế cầu thủ ghi nhiều bàn nhất lịch sử bóng đá. </p>
+                    </div>                  
+                '>
+                    <div class="year">2023</div>
+                    <p>Tham gia Al-Nassr FC ở giải Saudi Pro League, trở thành cầu thủ được trả lương cao nhất lịch sử</p>
+                </div>
+            </div>
+            <div class="timeline-item left">
+                <div class="timeline-content" data-year="2016?" data-expanded-info='
+                    <div class="popup-media">
+                        <img src="./Components/ronaldo_portugal_1.jpg" class="popup-image">
+                    </div>
+                    <div class="popup-details">
+                        <p><strong>2016:</strong> Với vai trò là người đội trưởng, anh đã dẫn dắt đội tuyển Bồ Đào Nha đến chung kết Euro 2016. Tuy không thể đóng góp trong trận chung kết do chấn thương đặc biệt nghiêm trọng ở 30p đầu, đội tuyển quê nhà đã không phụ kì vọng của anh, giải tỏa cơn khát cúp quốc tế với quê hương sau thời gian quá dài vắng bóng.</p>
+                        <p><span class="bold year">Tổng kết:</span></p>
+                        <ul>
+                            <li><span class="bold" style="color: var(--illust-color);">Danh hiệu cấp CLB:</span>
+                                <ol>
+                                    <li>Sporting CP: 1 Siêu cúp Bồ Đào Nha</li>
+                                    <li>Manchester United:
+                                        <ul>
+                                            <li>3 Premier League</li>
+                                            <li>1 FA Cup</li>
+                                            <li>2 Cúp Liên Đoàn Anh</li>
+                                            <li>1 UEFA Champions League</li>
+                                            <li>1 FIFA Club World Cup</li>
+                                        </ul>
+                                    </li>
+                                    <li>Real Madrid:
+                                        <ul>
+                                            <li>2 La Liga</li>
+                                            <li>2 Cúp Nhà Vua Tây Ban Nha</li>
+                                            <li>4 UEFA Champions League</li>
+                                            <li>3 Siêu cúp Châu Âu</li>
+                                            <li>3 FIFA Club World Cup</li>
+                                        </ul>
+                                    </li>
+                                    <li>Juventus:
+                                        <ul>
+                                            <li>2 Serie A</li>
+                                            <li>1 Cúp Quốc Gia Ý</li>
+                                            <li>2 Siêu Cúp Ý</li>
+                                        </ul>
+                                    </li>
+                                    <li>Al Nassr: 1 Giải VĐQG, 1 Cúp Nhà Vua Ả Rập Xê Út</li>
+                                </ol>
+                            </li>
+                            <li><span class="bold" style="color: var(--illust-color);">Danh hiệu ĐTQG Bồ Đào Nha:</span>
+                                <ul>
+                                    <li>1 UEFA European Championship</li>
+                                    <li>1 UEFA Nations League</li>
+                                </ul>
+                            </li>
+                            <li><span class="bold" style="color: var(--illust-color);">Danh hiệu cá nhân:</span>
+                                <ul>
+                                    <li>Quả bóng Vàng: 5 lần (2008, 2013, 2014, 2016, 2017)</li>
+                                    <li>Chiếc giày Vàng châu Âu: 4 lần</li>
+                                    <li>Cầu thủ xuất sắc nhất năm của FIFA: 2 lần</li>
+                                    <li>Vua phá lưới UEFA Champions League: 7 lần</li>
+                                    <li>Cầu thủ xuất sắc nhất giải đấu: Nhiều quá đếm không hết</li>
+                                </ul>
+                            </li>
+                        </ul> 
+                        <p><span class="shiny_text smooth" style="position: relative; font-size: 20px;">Dù anh đã già, anh vẫn sẽ chiến đấu để đạt thêm những kỷ lục mới, khẳng định vị thế bất diệt trong lịch sử bóng đá</span></p>
+                    </div>
+                    <div class="popup-media">
+                        <img src="./Components/ronaldo_ending.jpeg" class="popup-image">
+                    </div>  
+                '>  
+                    <div class="year">20XX</div>
+                    <p>Dẫn dắt Bồ Đào Nha tiến tới chức vô địch Euro với vai trò người tiên phong của đội</p>
+                </div>
+            </div>
+            <div class="popup-overlay" id="popupOverlay">
+                <div class="popup-container">
+                    <div class="popup-content">
+                        <!-- <div class="circle">
+                        </div>
+                        <div class="circle" id="right">
+                        </div>
+                        <div class="circle" id="bottom">
+                        </div> -->
+                        <h3 class="popup-year">2003</h3>
+                        <p class="popup-text"></p>
+                        <button class="close-btn">&times;</button>
+                    </div>
+                    <div class="popup-scroll-container">
+                        <div class="popup-text"></div>
+                        <div class="popup-image"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        </section>
+        <section>
+            <div class="slider-container">
+                <div class="description_highlights">HIGHLIGHTS</div>
+                <div class="slider">
+                    <div class="slide"><video src="./Components/Highlights/CR7_WebsiteHighlights-Sporting_desktop.mp4" muted loop></video></div>
+                    <div class="slide"><video src="./Components/Highlights/CR7_WebsiteHighlights-ManUtd_desktop.mp4" muted loop></video></div>
+                    <div class="slide"><video src="./Components/Highlights/CR7_WebsiteHighlights-RealMadrid_desktop.mp4" muted loop></video></div>
+                    <div class="slide"><video src="./Components/Highlights/CR7_WebsiteHighlights-Juventus_desktop.mp4" muted loop></video></div>
+                    <div class="slide"><video src="./Components/Highlights/CR7_WebsiteHighlights-AlNassr_desktop.mp4" muted loop></video></div>
+                    <div class="slide"><video src="./Components/Highlights/CR7_WebsiteHighlights-Portugal_desktop.mp4" muted loop></video></div>
+                </div>
+                <div class="custom-scrollbar">
+                    <div class="scroll-indicator active"></div>
+                    <div class="scroll-indicator"></div>
+                    <div class="scroll-indicator"></div>
+                    <div class="scroll-indicator"></div>
+                    <div class="scroll-indicator"></div>
+                    <div class="scroll-indicator"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer-content">
+            <h1>Theo dõi anh Bảy -></h1>
+            <div class="external">
+                <a class="social-link1" href="https://www.youtube.com/@cristiano">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="var(--text-primary)" height="1em" viewBox="0 0 24 24">
+                    <path d="M23,9.71a8.5,8.5,0,0,0-.91-4.13,2.92,2.92,0,0,0-1.72-1A78.36,78.36,0,0,0,12,4.27a78.45,78.45,0,0,0-8.34.3,2.87,2.87,0,0,0-1.46.74c-.9.83-1,2.25-1.1,3.45a48.29,48.29,0,0,0,0,6.48,9.55,9.55,0,0,0,.3,2,3.14,3.14,0,0,0,.71,1.36,2.86,2.86,0,0,0,1.49.78,45.18,45.18,0,0,0,6.5.33c3.5.05,6.57,0,10.2-.28a2.88,2.88,0,0,0,1.53-.78,2.49,2.49,0,0,0,.61-1,10.58,10.58,0,0,0,.52-3.4C23,13.69,23,10.31,23,9.71ZM9.74,14.85V8.66l5.92,3.11C14,12.69,11.81,13.73,9.74,14.85Z">
+                    </path>
+                  </svg>
+                </a>
+                <a class="social-link2" href="https://github.com/TheDuckIsRight/TheDuckIsRight.github.io">
+                  <svg viewBox="0 0 496 512" height="1em" fill="var(--text-primary)" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z">
+                    </path>
+                  </svg> 
+                </a>
+                    <a class="social-link3" href="https://x.com/Cristiano">
+                    <svg fill="#ffffff" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 32 32">
+                        <path d="M 28 8.558594 C 27.117188 8.949219 26.167969 9.214844 25.171875 9.332031 C 26.1875 8.722656 26.96875 7.757813 27.335938 6.609375 C 26.386719 7.171875 25.332031 7.582031 24.210938 7.804688 C 23.3125 6.847656 22.03125 6.246094 20.617188 6.246094 C 17.898438 6.246094 15.691406 8.453125 15.691406 11.171875 C 15.691406 11.558594 15.734375 11.933594 15.820313 12.292969 C 11.726563 12.089844 8.097656 10.128906 5.671875 7.148438 C 5.246094 7.875 5.003906 8.722656 5.003906 9.625 C 5.003906 11.332031 5.871094 12.839844 7.195313 13.722656 C 6.386719 13.695313 5.628906 13.476563 4.964844 13.105469 C 4.964844 13.128906 4.964844 13.148438 4.964844 13.167969 C 4.964844 15.554688 6.660156 17.546875 8.914063 17.996094 C 8.5 18.109375 8.066406 18.171875 7.617188 18.171875 C 7.300781 18.171875 6.988281 18.140625 6.691406 18.082031 C 7.316406 20.039063 9.136719 21.460938 11.289063 21.503906 C 9.605469 22.824219 7.480469 23.609375 5.175781 23.609375 C 4.777344 23.609375 4.386719 23.585938 4 23.539063 C 6.179688 24.9375 8.765625 25.753906 11.546875 25.753906 C 20.605469 25.753906 25.558594 18.25 25.558594 11.742188 C 25.558594 11.53125 25.550781 11.316406 25.542969 11.105469 C 26.503906 10.410156 27.339844 9.542969 28 8.558594 Z">
+                        </path>
+                    </svg>
+                </a>
+                <a class="social-link4" href="https://www.facebook.com/cr7cristianoronaldo">
+                  <svg fill="var(--text-primary)" viewBox="0 0 24 24" height="1em" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M23.9981 11.9991C23.9981 5.37216 18.626 0 11.9991 0C5.37216 0 0 5.37216 0 11.9991C0 17.9882 4.38789 22.9522 10.1242 23.8524V15.4676H7.07758V11.9991H10.1242V9.35553C10.1242 6.34826 11.9156 4.68714 14.6564 4.68714C15.9692 4.68714 17.3424 4.92149 17.3424 4.92149V7.87439H15.8294C14.3388 7.87439 13.8739 8.79933 13.8739 9.74824V11.9991H17.2018L16.6698 15.4676H13.8739V23.8524C19.6103 22.9522 23.9981 17.9882 23.9981 11.9991Z">
+                    </path>
+                  </svg> </a>
+            </div>
+            <audio id="a" src="./Components/ronaldo-siuuuu-edited.mp3" autoplay="false" preload="auto"></audio>
+            <button class="button bold" onclick="play()">CLICK ME</button>
+            <div class="clock-wrapper">
+                <div class="clock-base">
+                    <div class="clock-dial">
+                    <div class="clock-indicator"></div>
+                    <div class="clock-indicator"></div>
+                    <div class="clock-indicator"></div>
+                    <div class="clock-indicator"></div>
+                    <div class="clock-indicator"></div>
+                    <div class="clock-indicator"></div>
+                    <div class="clock-indicator"></div>
+                    <div class="clock-indicator"></div>
+                    <div class="clock-indicator"></div>
+                    <div class="clock-indicator"></div>
+                    <div class="clock-indicator"></div>
+                    <div class="clock-indicator"></div>
+                </div>
+                    <div class="clock-hour"></div>
+                    <div class="clock-minute"></div>
+                    <div class="clock-center"></div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const statNumbers = document.querySelectorAll('.stat-number');
+        
+        statNumbers.forEach(stat => {
+            const target = parseInt(stat.getAttribute('data-target'));
+            const duration = 2000; // 2 seconds
+            const steps = 50;
+            const increment = target / steps;
+            let current = 0;
+            
+            const updateCounter = () => {
+                if (current < target) {
+                    current += increment;
+                    stat.textContent = Math.floor(current);
+                    setTimeout(updateCounter, duration / steps);
+                } else {
+                    stat.textContent = target;
+                }
+            };
+            
+            updateCounter();
+        });
+
+        const timelineItems = document.querySelectorAll('.timeline-item');
+
+        const isElementInViewport = (el) => {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        };
+
+        const handleScroll = () => {
+            timelineItems.forEach(item => {
+                if (isElementInViewport(item)) {
+                    item.classList.add('visible');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        handleScroll();
+
+        function play() {
+          const sound = document.getElementById("a");
+          sound.currentTime = 0;
+          sound.play();
+        }
+
+        function popup() {
+            const pop = document.getElementsByClassName("pop-window");
+            pop.classList.toggle("show");
+        }
+
+        let vol = document.getElementById("background-music");
+        vol.volume = 0.1;
+    </script>
+    <script src="./Code/slider.js"></script>
+    <script src="./Code/popup.js"></script>
+</body>
+</html>
